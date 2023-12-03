@@ -1,0 +1,121 @@
+body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  #game-intro {
+    padding: 20px 0px;
+  }
+  
+  #game-container {
+    display: flex;
+    width: 100vw;
+    padding: 20px 0px;
+    justify-content: center;
+  }
+
+/* 为标题和段落设置基本样式 */
+h2,p, h1 {
+  font-family: 'Arial', sans-serif; /* 现代无衬线字体 */
+  color: #8a2be2; /* 紫色调 */
+  font-size: 32px; /* 字体大小 */
+  text-align: center; /* 文本居中 */
+  margin: 5px; /* 边距 */
+  border-radius: 10px; /* 边角圆滑 */
+  transition: all 0.3s ease-in-out; /* 平滑过渡效果 */
+}
+
+/* 鼠标悬停时的样式变化 */
+h2:hover, p:hover, h1:hover {
+  transform: scale(1.1); /* 轻微放大 */
+  box-shadow: 0px 0px 20px #8a2be2; /* 增强阴影效果 */
+}
+
+
+
+
+/* 为所有相关文本元素应用统一样式 */
+#score, #lives, #gameOver {
+  font-family: 'Arial', sans-serif; /* 现代无衬线字体 */
+  color: #8a2be2; /* 紫色调 */
+  font-size: 20px; /* 字体大小 */
+  text-align: center; /* 文本居中 */
+  margin: 10px; /* 边距 */
+  padding: 5px; /* 内边距 */
+  background-color: rgba(138, 43, 226, 0.1); /* 轻微的背景色 */
+  border-radius: 10px; /* 边角圆滑 */
+  box-shadow: 0px 0px 10px #8a2be2; /* 紫色调的阴影效果 */
+}
+
+/* 闪烁动画 */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 浮动动画 */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* 应用动画效果 */
+#score, #lives, #gameOver {
+  animation: blink 120s linear infinite, float 5s ease-in-out infinite;
+}
+
+
+
+  
+  #game-screen {
+    display: none;
+    align-content: center;
+    padding: 20px 0px;
+    overflow: hidden;
+    position: relative;
+    background-image: url('../images/backgrounInGame.png');
+    background-size: cover;
+    animation: slide 5s linear infinite;
+  }
+  
+  @keyframes slide {
+    0% {
+      background-position: -1000px 0;
+    }
+    95% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 50px 0;
+    }
+  }
+  
+  #game-end {
+    display: none;
+  }
+  
+  .game-intro p {
+    font-size: 18px;
+    font-family: "Verdana";
+  }
+  
+  .logo-img {
+    width: 1070px;
+  }
+  
+  .start-icon-img{
+    width: 150px;
+  }
+  
+  body button {
+    font-size: 30px;
+    background-color: blueviolet;
+    color: #fff;
+    padding: 20px 40px;
+    border: 0;
+    box-shadow: 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
