@@ -20,7 +20,11 @@ class Player {
   
       this.gameScreen.appendChild(this.element)
     }
-  
+
+    updateImage(newImagePath) {
+      this.element.src = newImagePath;
+  }
+
     move() {
       if (this.left >= 60) {
         this.left += this.directionX
@@ -68,4 +72,5 @@ class Player {
       }
     }
   }
+  
   

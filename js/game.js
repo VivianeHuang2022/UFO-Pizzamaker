@@ -32,6 +32,7 @@ class Game {
     gameLoop() {
       this.player.move()
       console.log('hello2')
+      this.updateBackgroundImage()
 
 
 //obstacle
@@ -85,7 +86,7 @@ class Game {
       })
       //this.energys = new_Energy
   
-      if (this.animateId % 10 === 0) {
+      if (this.animateId % 27 === 0) {
         this.energys.push(new Energy(this.gameScreen))
       }
       console.log('hello', this.energys, this.animateId)
@@ -112,8 +113,9 @@ class Game {
 
   //image background updated
   updateBackgroundImage() {
-    if (this.mutation >= 10) {
-      this.gameScreen.style.backgroundImage = "url('../images/background_mutation_7.png')"; 
+    if (this.mutation >= 50) {
+      this.gameScreen.style.backgroundImage = "url('../images/background_mutation_1.png')"; 
+      this.player.updateImage('images/character_smallGirl.png'); 
     }
   }
 
@@ -143,87 +145,5 @@ stopMoneyRain() {
 }
 }
 
-// 调用 startMoneyRain 来开始掉钱特效
-// 调用 stopMoneyRain 来停止特效
-
-
-
-/*
-// another solution
-let maxLength = Math.max(this.obstacles.length, this.energy.length);
-
-const nextObstacles = [];
-const newEnergy = [];
-
-for (let i = 0; i < maxLength; i++) {
-    if (i < this.obstacles.length) {
-        let currentObstacle = this.obstacles[i];
-        currentObstacle.move();
-
-        if (currentObstacle.top < 800) {
-            if (this.player.didCollide(currentObstacle)) {
-                console.log('collision with obstacle');
-                currentObstacle.element.remove();
-                this.lives -= 1;
-                if (this.lives <= 0) {
-                    this.isGameOver = true;
-                }
-            } else {
-                nextObstacles.push(currentObstacle);
-            }
-        } else {
-            currentObstacle.element.remove();
-            this.score += 10;
-        }
-    }
-
-    if (i < this.energy.length) {
-        let currentEnergy = this.energy[i];
-        currentEnergy.move();
-
-        if (currentEnergy.top < 800) {
-            if (this.player.didCollide(currentEnergy)) {
-                console.log('collision with energy');
-                currentEnergy.element.remove();
-                this.lives += 1;
-                this.score += 20;
-                if (this.lives > 3) {
-                    this.lives = 3;
-                }
-            } else {
-                newEnergy.push(currentEnergy);
-            }
-        } 
-    }
-}
-
-this.obstacles = nextObstacles;
-this.energy = newEnergy;
-
-if (this.animateId % 5 === 0) {
-    this.obstacles.push(new Obstacle(this.gameScreen));
-}
-
-if (this.animateId % 50 === 0) {
-    this.energy.push(new Energy(this.gameScreen));
-}
-
-console.log(this.obstacles);
-console.log(this.energy);
-
-document.getElementById('score').innerText = this.score;
-document.getElementById('lives').innerText = this.lives;
-
-if (this.isGameOver) {
-    this.gameScreen.style.display = 'none';
-    this.endScreen.style.display = 'block';
-    this.player.element.remove();
-} else {
-    console.log(this.animateId);
-    this.animateId = requestAnimationFrame(() => this.gameLoop());
-}
-
-
-}
-}
-*/
+//  startMoneyRain 
+// stopMoneyRain 
