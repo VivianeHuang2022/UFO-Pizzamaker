@@ -9,7 +9,7 @@ class Player {
       this.directionY = 0
   
       this.element = document.createElement('img')
-      this.element.src = 'images/ufo.PNG'
+      this.element.src = 'images/ufo.png'
       this.element.style.position = 'absolute'
   
       this.element.style.height = `${this.height}px`

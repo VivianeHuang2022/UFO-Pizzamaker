@@ -58,5 +58,13 @@ window.addEventListener('load', () => {
         game.player.directionX = 0
       }
     })
+
+    //page link
+    document.querySelector(".logo-img").addEventListener("click", function() {
+      document.getElementById("game-intro-container").scrollIntoView();
+  });
+
   })
   
+
+

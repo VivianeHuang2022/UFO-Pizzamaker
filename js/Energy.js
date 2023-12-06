@@ -1,4 +1,4 @@
-class energy {
+class Energy {
     constructor(gameScreen) {
       this.gameScreen = gameScreen
       this.width = 120
@@ -20,9 +20,9 @@ class energy {
     }
   
     move() {
-      this.top += 20
+      this.top += 12
       this.updatePosition()
-      this.left += 20
+      this.left += 10
     }
   
     updatePosition() {

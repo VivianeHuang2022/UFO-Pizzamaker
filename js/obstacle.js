@@ -20,9 +20,9 @@ class Obstacle {
     }
   
     move() {
-      this.top += 27
+      this.top += 5
       this.updatePosition()
-      this.right += 20
+      this.right += 17
     }
   
     updatePosition() {

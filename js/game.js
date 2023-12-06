@@ -9,10 +9,11 @@ class Game {
       this.obstacles = []
       //changed
       this.energys = []
-
+    
       this.animateId = null
       this.score = 0
-      this.lives = 7
+      this.lives = 10
+      this.mutation = 0
       this.isGameOver = false
     }
   
@@ -23,12 +24,14 @@ class Game {
       this.gameScreen.style.height = `${this.height}px`
       this.gameScreen.style.width = `${this.width}px`
       console.dir(this.gameScreen)
+
       this.player = new Player(this.gameScreen)
       this.gameLoop()
     }
   
     gameLoop() {
       this.player.move()
+      console.log('hello2')
 
 
 //obstacle
@@ -40,6 +43,7 @@ class Game {
             console.log('collision')
             currentObstacle.element.remove()
             this.lives -= 1
+            this.mutation += 5
             if (this.lives <= 0) {
               this.isGameOver = true
             }
@@ -53,7 +57,7 @@ class Game {
       })
       this.obstacles = nextObstacles
   
-      if (this.animateId % 5 === 0) {
+      if (this.animateId % 20 === 0) {
         this.obstacles.push(new Obstacle(this.gameScreen))
       }
   
@@ -61,50 +65,87 @@ class Game {
 
 
 
-
-
-
     //Energy added
-/*
+
       const new_Energy = []
       this.energys.forEach(currentEnergy => {
         currentEnergy.move()
         if (currentEnergy.top < 800) {
           if (this.player.didCollide(currentEnergy)) {
-            console.log('collision')
+            console.log('collision with energy')
             currentEnergy.element.remove()
             this.lives += 1
             this.score -= 20
+            this.mutation += 5
             new_Energy.push(currentEnergy)
           } 
+          
+          
         } 
       })
-      this.energys = new_Energy
+      //this.energys = new_Energy
   
-      if (this.animateId % 5 === 0) {
+      if (this.animateId % 10 === 0) {
         this.energys.push(new Energy(this.gameScreen))
       }
-      console.log(this.energys)
-      */
+      console.log('hello', this.energys, this.animateId)
 
-
-  
       document.getElementById('score').innerText = this.score
       document.getElementById('lives').innerText = this.lives
+      document.getElementById('mutation').innerText = this.mutation
   
       if (this.isGameOver) {
         this.gameScreen.style.display = 'none'
         this.endScreen.style.display = 'block'
         this.player.element.remove()
+        this.startMoneyRain()
+
       } else {
         console.log(this.animateId)
         this.animateId = requestAnimationFrame(() => this.gameLoop())
+        this.stopMoneyRain()
       }
+    
+  }
+
+
+
+  //image background updated
+  updateBackgroundImage() {
+    if (this.mutation >= 10) {
+      this.gameScreen.style.backgroundImage = "url('../images/background_mutation_7.png')"; 
     }
   }
 
 
-// 计算障碍物和能量数组中较长的长度
+  //money rain
+ startMoneyRain() {
+    const container = document.getElementById('money-rain-container');
+    container.style.display = 'block';
+
+    // moneyrain
+    if(this.isGameOver = true){
+      for (let i = 0; i < 100; i++) {
+        let money = document.createElement('div');
+        money.classList.add('money-rain');
+        money.style.left = Math.random() * 100 + '%'; // random position
+        money.style.animationDuration = Math.random() * 3 + 2 + 's'; // random time
+        money.style.animationDelay = Math.random() * 5 + 's'; // random delay
+        container.appendChild(money);
+    }
+    }
+}
+
+stopMoneyRain() {
+    const container = document.getElementById('money-rain-container');
+    container.style.display = 'none';
+    container.innerHTML = ''; // clear 
+}
+}
+
+// 调用 startMoneyRain 来开始掉钱特效
+// 调用 stopMoneyRain 来停止特效
+
 
 
 /*
@@ -181,8 +222,6 @@ if (this.isGameOver) {
     console.log(this.animateId);
     this.animateId = requestAnimationFrame(() => this.gameLoop());
 }
-
-
 
 
 }

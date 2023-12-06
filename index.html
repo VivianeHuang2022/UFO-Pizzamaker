@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="./styles/style.css" />
-  <title>UFO like Mushroom</title>
+  <title>The Adventure of UFO X</title>
 </head>
 
 <body>
@@ -15,16 +15,52 @@
     <div id="game-intro">
       <img src="./images/main theme.png" alt="" class="logo-img" />
       <br />
+      <h1>Go for mushrooms!</h1>
       <button id="start-button">Start Game</button>
-      <p>Use the left and right arrow to control the UFO!</p>
-      <img src=".images/Start icon.png" alt="" class="start-icon-img" />
+      <!-- 
+      <p id="operation-logic">Use the left and right arrow to control the UFO!</p>
+      <p id="win-logic">Use the left and right arrow to control the UFO!</p>
+      -->
+
+    
+      <div id="game-intro-container">
+
+      <section id="win-logic">
+          <h2>Win Logic</h2>
+          <ul>
+              <li>Start with 3 lives as UFO X.</li>
+              <li>Eating a normal mushroom: gain 1 life, -10 risk score.</li>
+              <li>Eating a poisonous mushroom: lose 1 life.</li>
+              <li>Survive after eating 10 poisonous mushrooms: transform into a human.</li>
+              <!-- Add more win logic points here -->
+          </ul>
+      </section>
+
+      <section id="operation-logic">
+          <h2>Operation Logic</h2>
+          <ul>
+              <li>Players maneuver UFO X to collect mushrooms.</li>
+              <li>Normal mushrooms appear randomly and are beneficial.</li>
+              <li>use Arrow Up and arrow down to control your mouse.</li>
+              <li>Poisonous mushrooms are riskier but essential for transformation.</li>
+              <!-- Add more operation logic points here -->
+          </ul>
+      </section>
+
+    </div>
+
+
+
+
     </div>
 
     <div id="game-container">
       <div>
         <h2>Final results</h2>
-        <p>Score: <span id="score">0</span></p>
+        <p>Risks: <span id="score">0</span></p>
         <p>Lives: <span id="lives">3</span></p>
+        <p>mutation: <span id="mutation">0</span></p>
+
       </div>
       <!-- #game-screen is initially hidden using CSS style display: none 
              <div id="game-screen"> </div>
@@ -39,14 +75,17 @@
       <img src="./images/background.png" alt="" class="logo-img" />
       <h1>Game Over</h1>
       <br />
+      <div id="money-rain-container"></div>
       <button id="restart-button">Restart</button>
     </div>
   </main>
-
+  
   <script type="text/javascript" src="js/obstacle.js"></script>
   <script type="text/javascript" src="js/player.js"></script>
+  <script type="text/javascript" src="js/Energy.js"></script>
   <script type="text/javascript" src="js/game.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
+  
 </body>
 
 </html>
