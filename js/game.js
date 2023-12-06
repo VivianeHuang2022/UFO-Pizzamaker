@@ -151,7 +151,7 @@ class Game {
   //image background updated
   updateBackgroundImage() {
     if (this.mutation >= 50) {
-      this.gameScreen.style.backgroundImage = "url('../images/background_mutation_1.png')"; 
+      this.gameScreen.style.backgroundImage = "url('images/background_mutation_1.png')"; 
       this.player.updateImage('images/character_smallGirl.png'); 
     }
   }
