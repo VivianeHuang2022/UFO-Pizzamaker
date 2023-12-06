@@ -5,7 +5,6 @@ window.addEventListener('load', () => {
     let game
   
     function startGame() {
-      console.log('start game')
       game = new Game()
       game.start()
     }
@@ -21,19 +20,19 @@ window.addEventListener('load', () => {
   
     document.addEventListener('keydown', event => {
       if (event.code === 'ArrowUp' || event.code === 'KeyW') {
-        console.log('Go up !')
+    
         game.player.directionY = -5
       }
       if (event.code === 'ArrowDown' || event.code === 'KeyS') {
-        console.log('Go down !')
+      
         game.player.directionY = 5
       }
       if (event.code === 'ArrowLeft' || event.code === 'KeyA') {
-        console.log('Go left !')
+       
         game.player.directionX = -5
       }
       if (event.code === 'ArrowRight' || event.code === 'KeyD') {
-        console.log('Go right !')
+        
         game.player.directionX = 5
       }
     })
@@ -45,7 +44,7 @@ window.addEventListener('load', () => {
         event.code === 'ArrowDown' ||
         event.code === 'KeyS'
       ) {
-        console.log('Stop moving on Y')
+        
         game.player.directionY = 0
       }
       if (
@@ -54,10 +53,20 @@ window.addEventListener('load', () => {
         event.code === 'ArrowRight' ||
         event.code === 'KeyD'
       ) {
-        console.log('Stop moving on X')
+        
         game.player.directionX = 0
       }
     })
+
+// bullet shooting
+    document.addEventListener('keydown', (event) => {
+      if (event.code === 'Space') {
+        const bullet = game.player.shoot()
+        game.bullets.push(bullet)
+        
+  }
+});
+
 
     //page link
     document.querySelector(".logo-img").addEventListener("click", function() {

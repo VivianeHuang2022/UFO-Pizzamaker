@@ -9,6 +9,7 @@ class Game {
       this.obstacles = []
       //changed
       this.energys = []
+      this.bullets = []
     
       this.animateId = null
       this.score = 0
@@ -26,12 +27,12 @@ class Game {
       console.dir(this.gameScreen)
 
       this.player = new Player(this.gameScreen)
+
       this.gameLoop()
     }
   
     gameLoop() {
       this.player.move()
-      console.log('hello2')
       this.updateBackgroundImage()
 
 
@@ -41,7 +42,7 @@ class Game {
         currentObstacle.move()
         if (currentObstacle.top < 800) {
           if (this.player.didCollide(currentObstacle)) {
-            console.log('collision')
+
             currentObstacle.element.remove()
             this.lives -= 1
             this.mutation += 5
@@ -62,7 +63,7 @@ class Game {
         this.obstacles.push(new Obstacle(this.gameScreen))
       }
   
-      console.log(this.obstacles)
+      
 
 
 
@@ -73,7 +74,7 @@ class Game {
         currentEnergy.move()
         if (currentEnergy.top < 800) {
           if (this.player.didCollide(currentEnergy)) {
-            console.log('collision with energy')
+
             currentEnergy.element.remove()
             this.lives += 1
             this.score -= 20
@@ -85,11 +86,47 @@ class Game {
         } 
       })
       //this.energys = new_Energy
-  
+
       if (this.animateId % 27 === 0) {
         this.energys.push(new Energy(this.gameScreen))
       }
-      console.log('hello', this.energys, this.animateId)
+    
+
+
+
+        // update bullet position and check collision
+    this.bullets = this.bullets.filter(bullet => {
+    bullet.move();
+    let bulletStillExists = true;
+
+    // check collision between bullets and obstacle
+    this.obstacles = this.obstacles.filter(obstacle => {
+      if (bullet.didCollide(obstacle)) {
+        obstacle.element.remove();
+        bullet.element.remove();
+        bulletStillExists = false;
+        return false;
+      }
+      return true;
+    });
+
+    // check collision between bullets and energy
+    this.energys = this.energys.filter(energy => {
+      if (bullet.didCollide(energy)) {
+        energy.element.remove();
+        bullet.element.remove();
+        bulletStillExists = false;
+        return false;
+      }
+      return true;
+    });
+
+    return bulletStillExists && bullet.left < this.width;
+  });
+
+
+
+      
 
       document.getElementById('score').innerText = this.score
       document.getElementById('lives').innerText = this.lives
@@ -102,7 +139,7 @@ class Game {
         this.startMoneyRain()
 
       } else {
-        console.log(this.animateId)
+
         this.animateId = requestAnimationFrame(() => this.gameLoop())
         this.stopMoneyRain()
       }

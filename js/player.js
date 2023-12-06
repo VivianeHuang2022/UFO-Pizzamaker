@@ -22,7 +22,11 @@ class Player {
     }
 
     updateImage(newImagePath) {
-      this.element.src = newImagePath;
+      this.element.src = newImagePath
+      this.height = 120
+      this.width = 85.2
+      this.element.style.height = `${this.height}px`
+      this.element.style.width = `${this.width}px`
   }
 
     move() {
@@ -71,6 +75,13 @@ class Player {
         return false
       }
     }
+
+    shoot() {
+      console.log(this.left);
+      const bullet = new Bullet(this.gameScreen, this);
+      return bullet;
+    }
+
   }
   
   

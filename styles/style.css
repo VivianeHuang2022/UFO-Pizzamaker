@@ -21,6 +21,32 @@ body {
     align-items: flex-start;
   }
 
+/* 为标题和段落设置基本样式 */
+h1{
+
+  font-family: 'Arial', sans-serif; /* 现代无衬线字体 */
+  font-size: 47px; /* 字体大小 */
+  text-align: center; /* 文本居中 */
+  margin: 10px; /* 边距 */
+  border-radius: 10px; /* 边角圆滑 */
+  transition: all 0.3s ease-in-out; /* 平滑过渡效果 */
+  background: linear-gradient(45deg, #D3D1FD, #4F25C8); /* Gradient from purple to orange-yellow */
+
+  border-radius: 4px;
+  color: white; /* White text for better contrast */
+  transition: background 0.3s ease; /* Smooth transition for background change */
+
+  padding: 0px 10px;
+  box-shadow: 10;
+  border-radius: 20px;
+
+}
+
+h1:hover {
+  transform: scale(1.1); /* 轻微放大 */
+  box-shadow: 0px 0px 20px #e2bd2b; /* 增强阴影效果 */
+}
+
 
  #win-logic, #operation-logic {
     background: #fff;
@@ -56,36 +82,8 @@ ul li:hover {
     background: linear-gradient(45deg, #ff9700, #7d3cff); /* Invert gradient on hover */
 }
 
-  
-  #game-container {
-    display: flex;
-    width: 100vw;
-    padding: 20px 0px;
-    justify-content: center;
-  }
 
-/* 为标题和段落设置基本样式 */
-h1{
-
-  font-family: 'Arial', sans-serif; /* 现代无衬线字体 */
-  font-size: 47px; /* 字体大小 */
-  text-align: center; /* 文本居中 */
-  margin: 10px; /* 边距 */
-  border-radius: 10px; /* 边角圆滑 */
-  transition: all 0.3s ease-in-out; /* 平滑过渡效果 */
-  background: linear-gradient(45deg, #D3D1FD, #4F25C8); /* Gradient from purple to orange-yellow */
-
-  border-radius: 4px;
-  color: white; /* White text for better contrast */
-  transition: background 0.3s ease; /* Smooth transition for background change */
-
-  padding: 0px 10px;
-  box-shadow: 10;
-  border-radius: 20px;
-
-}
-
-p,h2 {
+p, h2 {
   font-family: 'Arial', sans-serif; /* 现代无衬线字体 */
   color: #ae2be2; /* 紫色调 */
   font-size: 32px; /* 字体大小 */
@@ -96,7 +94,7 @@ p,h2 {
 }
 
 /* 鼠标悬停时的样式变化 */
-h2:hover, h1:hover {
+h2:hover {
   transform: scale(1.1); /* 轻微放大 */
   box-shadow: 0px 0px 20px #e2bd2b; /* 增强阴影效果 */
 }
@@ -113,6 +111,8 @@ h2:hover, h1:hover {
   background-color: rgba(138, 43, 226, 0.1); /* 轻微的背景色 */
   border-radius: 10px; /* 边角圆滑 */
   box-shadow: 0px 0px 10px #8a2be2; /* 紫色调的阴影效果 */
+
+
 }
 
 /* 闪烁动画 */
@@ -140,7 +140,12 @@ h2:hover, h1:hover {
     overflow: hidden;
     position: relative;
     background-image: url('../images/backgrounInGame.png');
+    margin: 0 auto;
+   
+
     background-size: cover;
+    z-index: 1; 
+
     animation: slide 5s linear infinite;
   }
   
@@ -210,7 +215,7 @@ h2:hover, h1:hover {
     position: absolute;
     width: 50px; /* 根据需要调整大小 */
     height: 50px;
-    background-image: url('../images/money.png'); /* 钱币图片的路径 */
+    background-image: url('../images/star-use-3.png'); /* 钱币图片的路径 */ 
     background-size: cover;
     animation: fall 3s linear infinite;
 }
