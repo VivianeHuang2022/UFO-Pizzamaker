@@ -13,7 +13,7 @@ class Game {
     
       this.animateId = null
       this.score = 0
-      this.lives = 10
+      this.lives = 2
       this.mutation = 0
       this.isGameOver = false
     }
@@ -125,9 +125,6 @@ class Game {
   });
 
 
-
-      
-
       document.getElementById('score').innerText = this.score
       document.getElementById('lives').innerText = this.lives
       document.getElementById('mutation').innerText = this.mutation
@@ -152,7 +149,7 @@ class Game {
   updateBackgroundImage() {
     if (this.mutation >= 50) {
       this.gameScreen.style.backgroundImage = "url('images/background_mutation_1.png')"; 
-      this.player.updateImage('images/character_smallGirl.png'); 
+      this.player.updateImage('images/image-2.gif'); 
     }
   }
 

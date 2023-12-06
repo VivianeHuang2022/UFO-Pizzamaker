@@ -7,9 +7,9 @@ class Bullet {
       this.height = 20;
       this.speed = 10;
   
-      this.element = document.createElement('img');
+      this.element = document.createElement('img'); 
 
-      this.element.src = 'images/star-use1.png';
+      this.element.src = 'images/image-2.gif';
       this.element.style.position = 'absolute';
       this.element.style.width = `${this.width}px`;
       this.element.style.height = `${this.height}px`;

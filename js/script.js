@@ -14,8 +14,8 @@ window.addEventListener('load', () => {
     })
   
     restartButton.addEventListener('click', function () {
-      // startGame()
-      location.reload()
+      startGame()
+      //location.reload()
     })
   
     document.addEventListener('keydown', event => {

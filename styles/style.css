@@ -10,10 +10,7 @@ body {
     text-align: center; /* 文本居中 */
   }
 
-  .logo-img {
-    width: 100%;
-    height: auto;
-  }
+ 
 
   #game-intro-container{
     display: flex;
@@ -161,10 +158,6 @@ h2:hover {
     }
   }
   
-  #game-end {
-    display: none;
-  }
-  
   
 #start-button {
     font-size: 30px;
@@ -184,6 +177,16 @@ h2:hover {
      /* 确保按钮在指定位置居中 */
   }
 
+
+  #game-end {
+    display: none;
+  }
+
+  #start-button:hover{
+    transform: scale(1.03); /* Slightly enlarge sections on hover */
+		background: linear-gradient(45deg, #ff9700, #7d3cff); /* Invert gradient on hover */
+  }
+
   #restart-button{
     font-size: 30px;
     background-color: blueviolet;
@@ -193,13 +196,10 @@ h2:hover {
     box-shadow: 0;
     border-radius: 5px;
     margin-bottom: 20px;
+
   }
 
-  #start-button:hover,  #restart-button:hover{
-    transform: scale(1.03); /* Slightly enlarge sections on hover */
-		background: linear-gradient(45deg, #ff9700, #7d3cff); /* Invert gradient on hover */
-  }
-  
+
   #money-rain-container {
     position: fixed;
     top: 0;
@@ -223,4 +223,33 @@ h2:hover {
 @keyframes fall {
     0% { top: -100px; }
     100% { top: 100%; }
+}
+
+
+#game-end {
+  display: none;
+  align-content: center;
+  padding: 20px 0px;
+  overflow: hidden;
+  position: relative;
+  background-image: url('../images/background.png'); 
+  margin: 0 auto;
+  height: 50vw;
+
+  background-size: cover;
+  z-index: 1; 
+
+  animation: slide 5s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    background-position: -1000px 0;
+  }
+  95% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 0;
+  }
 }
