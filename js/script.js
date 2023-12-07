@@ -1,6 +1,7 @@
 window.addEventListener('load', () => {
     const startButton = document.getElementById('start-button')
-    const restartButton = document.getElementById('restart-button')
+    const restartButton = document.querySelector('#restart-button')
+    
   
     let game
   
@@ -14,8 +15,7 @@ window.addEventListener('load', () => {
     })
   
     restartButton.addEventListener('click', function () {
-      startGame()
-      //location.reload()
+      location.reload()
     })
   
     document.addEventListener('keydown', event => {

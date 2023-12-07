@@ -16,6 +16,8 @@ class Game {
       this.lives = 2
       this.mutation = 0
       this.isGameOver = false
+
+      this.bgMusic = document.getElementById('bg-music');
     }
   
     start() {
@@ -29,14 +31,16 @@ class Game {
       this.player = new Player(this.gameScreen)
 
       this.gameLoop()
+      //background audio
+      this.bgMusic.play();
     }
   
     gameLoop() {
       this.player.move()
       this.updateBackgroundImage()
 
-
-//obstacle
+    
+//obstacle coliision
       const nextObstacles = []
       this.obstacles.forEach(currentObstacle => {
         currentObstacle.move()
@@ -48,6 +52,7 @@ class Game {
             this.mutation += 5
             if (this.lives <= 0) {
               this.isGameOver = true
+
             }
           } else {
             nextObstacles.push(currentObstacle)
@@ -59,13 +64,11 @@ class Game {
       })
       this.obstacles = nextObstacles
   
-      if (this.animateId % 20 === 0) {
+      if (this.animateId % 10 === 0) {
         this.obstacles.push(new Obstacle(this.gameScreen))
       }
   
       
-
-
 
     //Energy added
 
@@ -87,12 +90,10 @@ class Game {
       })
       //this.energys = new_Energy
 
-      if (this.animateId % 27 === 0) {
+      if (this.animateId % 20 === 0) {
         this.energys.push(new Energy(this.gameScreen))
       }
     
-
-
 
         // update bullet position and check collision
     this.bullets = this.bullets.filter(bullet => {
@@ -134,6 +135,9 @@ class Game {
         this.endScreen.style.display = 'block'
         this.player.element.remove()
         this.startMoneyRain()
+
+        this.bgMusic.pause();
+        this.bgMusic.currentTime = 0;
 
       } else {
 
