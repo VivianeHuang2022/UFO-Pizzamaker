@@ -158,12 +158,12 @@ class Game {
   }
 
 
-  //money rain
+  //start rain
  startMoneyRain() {
     const container = document.getElementById('money-rain-container');
     container.style.display = 'block';
 
-    // moneyrain
+    // start rain
     if(this.isGameOver = true){
       for (let i = 0; i < 100; i++) {
         let money = document.createElement('div');
@@ -182,6 +182,4 @@ stopMoneyRain() {
     container.innerHTML = ''; // clear 
 }
 }
-
-//  startMoneyRain 
-// stopMoneyRain 
+ 

@@ -1,38 +1,40 @@
 # [Project's Name]
-UFO eat mushroom
+The Adventure of UFO X
 
 ## Description
-A dynamic, JavaScript-based game where players navigate through obstacles, collect energies, and experience a unique 'money rain' effect upon game over. The game challenges players with a responsive environment, balancing risk and reward to achieve a high score while maintaining lives.
+Embark on a captivating journey with "The Adventure of UFO X", a dynamic JavaScript-based game. Players guide a UFO through a maze of poisonous mushrooms, gathering energy from normal mushrooms to sustain life. The challenge escalates with a responsive environment that requires strategic maneuvering. The game's highlight is the unique 'star rain' effect signaling game over, alongside a shooting mechanic to target mushrooms for a more interactive experience.
 
 ## MVP (Minimum Viable Product)
-- **Player Movement:** Basic movement controls for the player.
-- **Obstacle Avoidance:** Players must avoid obstacles to survive.
-- **Energy Collection:** Players can collect energies to gain lives.
-- **Score Tracking:** The game tracks and displays the player's score.
-- **Life System:** The game starts with a set number of lives, lost on collision with obstacles.
-- **Game Over State:** Transition to a game over screen with a money rain effect.
+- **Player Movement:** Intuitive control system for UFO navigation.
+- **Obstacle Avoidance:** Skillful evasion of poisonous mushrooms is critical for survival.
+- **Energy Collection:** Gathering normal mushrooms boosts life count.
+- **Score Tracking:** Real-time score display to track player achievements.
+- **Life System:** Commences with a finite number of lives, diminishing with each collision with poisonous mushrooms.
+- **Mutation System:** A gene mutation feature activates upon sufficient interaction with both mushroom types.
+- **Game Over State:** A visually stunning transition to a game over screen enhanced by a star rain effect.
 
 ## Backlog
-- **Power-Ups:** Introduce power-ups for temporary advantages.
-- **Level Progression:** Increase difficulty or change environments as the player progresses.
-- **Leaderboard:** Implement a system to track and display high scores.
-- **Multiplayer Mode:** Allow multiple players to compete or cooperate.
-- **Sound Effects and Music:** Add audio for an immersive experience.
+- **Power-Ups:** Introduce power-ups for temporary gameplay advantages.
+- **Level Progression:** Gradually increase difficulty and introduce new environments.
+- **Leaderboard:** Feature a high score system for competitive play.
+- **Multiplayer Mode:** Enable cooperative or competitive gameplay for multiple players.
+- **Sound Effects and Music:** Incorporate immersive audio elements for an enriched gaming experience.
 
 ## Data Structure
-Classes and methods include:
-- `Game`: Main game class for initializing and running the game.
-- `start()`: Sets up the game screen and starts the main loop.
-- `gameLoop()`: Handles gameplay logic including player and obstacle movements.
-- `Player`: Handles player-specific logic and movements.
-- `Obstacle`: Represents obstacles in the game.
-- `Energy`: Represents energy objects to be collected by the player.
-- `startMoneyRain()`, `stopMoneyRain()`: Functions for the money rain effect.
+Key components and functionalities:
+- `Game`: Core class to initialize and manage game operations.
+- `start()`: Prepares the game environment and initiates the gameplay loop.
+- `gameLoop()`: Central loop handling game mechanics, including player and obstacle dynamics.
+- `Player`: Manages UFO's specific actions and movements.
+- `Obstacle`: Represents in-game hazards.
+- `Energy`: Denotes collectible items for life enhancement.
+- `Bullet`: Allows the UFO to shoot at obstacles and energy sources for strategic play.
 
 ## States & State Transitions
-- **Start Screen:** Initial view where the game is introduced.
-- **Game Screen:** The main gameplay area.
-- **End Screen:** Displayed when the game is over, showing the score and triggering the money rain.
+- **Start Screen:** The introductory interface presenting the game.
+- **Game Screen:** The primary area of gameplay activity.
+- **End Screen:** Showcases the final score and unveils the star rain effect post-game.
+
 
 ## Task
 1. Set up the game environment and screens.
