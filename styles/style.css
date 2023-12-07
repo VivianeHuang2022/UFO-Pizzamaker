@@ -6,8 +6,8 @@ body {
   
   #game-intro {
     padding: 20px 0px;
-    position: relative; /* 设置为相对定位 */
-    text-align: center; /* 文本居中 */
+    position: relative; 
+    text-align: center; 
   }
 
  
@@ -18,15 +18,15 @@ body {
     align-items: flex-start;
   }
 
-/* 为标题和段落设置基本样式 */
+/* set up styles for our title and paragragh*/
 h1{
 
-  font-family: 'Arial', sans-serif; /* 现代无衬线字体 */
-  font-size: 47px; /* 字体大小 */
-  text-align: center; /* 文本居中 */
-  margin: 10px; /* 边距 */
-  border-radius: 10px; /* 边角圆滑 */
-  transition: all 0.3s ease-in-out; /* 平滑过渡效果 */
+  font-family: 'Arial', sans-serif; 
+  font-size: 47px; 
+  text-align: center; 
+  margin: 10px; 
+  border-radius: 10px; 
+  transition: all 0.3s ease-in-out; 
   background: linear-gradient(45deg, #D3D1FD, #4F25C8); /* Gradient from purple to orange-yellow */
 
   border-radius: 4px;
@@ -40,8 +40,8 @@ h1{
 }
 
 h1:hover {
-  transform: scale(1.1); /* 轻微放大 */
-  box-shadow: 0px 0px 20px #e2bd2b; /* 增强阴影效果 */
+  transform: scale(1.1); /* slightly bigger */
+  box-shadow: 0px 0px 20px #e2bd2b; /* shallow */
 }
 
 
@@ -53,8 +53,8 @@ h1:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease-in-out; /* Add transition for hover effect */
     width: 20%;
-    flex-grow: 1; /* 让故事部分占据更多空间 */
-    margin: 0 10px; /* 为左右两侧的部分添加间隙 */
+    flex-grow: 1; /* more space */
+    margin: 0 10px; 
 }
 
 #win-logic:hover, #operation-logic:hover {
@@ -81,50 +81,50 @@ ul li:hover {
 
 
 p, h2 {
-  font-family: 'Arial', sans-serif; /* 现代无衬线字体 */
-  color: #ae2be2; /* 紫色调 */
-  font-size: 32px; /* 字体大小 */
-  text-align: center; /* 文本居中 */
-  margin: 5px; /* 边距 */
-  border-radius: 10px; /* 边角圆滑 */
-  transition: all 0.3s ease-in-out; /* 平滑过渡效果 */
+  font-family: 'Arial', sans-serif;
+  color: #ae2be2; 
+  font-size: 32px; 
+  text-align: center; 
+  margin: 5px; 
+  border-radius: 10px; 
+  transition: all 0.3s ease-in-out; 
 }
 
-/* 鼠标悬停时的样式变化 */
+/* mouse styles */
 h2:hover {
-  transform: scale(1.1); /* 轻微放大 */
-  box-shadow: 0px 0px 20px #e2bd2b; /* 增强阴影效果 */
+  transform: scale(1.1); /* slightly bigger */
+  box-shadow: 0px 0px 20px #e2bd2b; /* shallow */
 }
 
 
-/* 为所有相关文本元素应用统一样式 */
+/* align the text style */
 #mutation, #score, #lives, #gameOver {
-  font-family: 'Arial', sans-serif; /* 现代无衬线字体 */
-  color: #8a2be2; /* 紫色调 */
-  font-size: 20px; /* 字体大小 */
-  text-align: center; /* 文本居中 */
-  margin: 10px; /* 边距 */
-  padding: 5px; /* 内边距 */
-  background-color: rgba(138, 43, 226, 0.1); /* 轻微的背景色 */
-  border-radius: 10px; /* 边角圆滑 */
-  box-shadow: 0px 0px 10px #8a2be2; /* 紫色调的阴影效果 */
+  font-family: 'Arial', sans-serif; 
+  color: #8a2be2;
+  font-size: 20px; 
+  text-align: center; 
+  margin: 10px; 
+  padding: 5px; 
+  background-color: rgba(138, 43, 226, 0.1); 
+  border-radius: 10px; 
+  box-shadow: 0px 0px 10px #8a2be2; 
 
 
 }
 
-/* 闪烁动画 */
+/* flash animation */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
 
-/* 浮动动画 */
+/* float animation */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
 
-/* 应用动画效果 */
+/* apply animation */
 #score, #lives, #gameOver {
   animation: blink 120s linear infinite, float 5s ease-in-out infinite;
 }
@@ -171,10 +171,10 @@ h2:hover {
     background: linear-gradient(45deg, #7d3cff, #ff9700); /* Gradient from purple to orange-yellow */
     transition: background 0.3s ease; /* Smooth transition for background change */
 
-    position: absolute; /* 绝对定位相对于其父容器 */
-    top: 42%; /* 垂直居中定位 */
-    left:70.5%; /* 水平居中定位 */
-     /* 确保按钮在指定位置居中 */
+    position: absolute; 
+    top: 42%; 
+    left:70.5%; 
+  
   }
 
 
@@ -216,9 +216,9 @@ h2:hover {
 
 .money-rain {
     position: absolute;
-    width: 50px; /* 根据需要调整大小 */
+    width: 50px; 
     height: 50px;
-    background-image: url('../images/star-use-3.png'); /* 钱币图片的路径 */ 
+    background-image: url('../images/star-use-3.png');  
     background-size: cover;
     animation: fall 3s linear infinite;
 }
